@@ -20,27 +20,30 @@ class Motor:
 class Auto:
     cantidadCreados = 0
 
-    def __init__(self, modelo:str, precio:int, marca:str, registro:int):
+    def __init__(self, modelo:str, precio:int, asientos, marca, motor, registro:int):
         self.modelo = modelo
         self.precio = precio
-        self.asientos = []
+        self.asientos = asientos
         self.marca = marca
+        self.motor = motor
         self.registro = registro
 
-    # @property
-    # def getterAsientos
-
-    def cantidadAsientos(self, color, precio, registro):
-        nuevo_asiento = Asiento(color, precio, registro)
-        self.asientos.append(nuevo_asiento)
-        print(len(self.asientos))
-
-    def verificarIntegridad(self, ObjetoAsiento, ObjetoMotor, ObjetoAuto):
-        if ObjetoAsiento.registro == ObjetoAuto.registro == ObjetoMotor.registro:
-            print("Auto Original")
-        else:
-            print("Las piezas no son originales")
-
+        def cantidadAsientos(self):
+            numAsientos = 0
+            for asiento in self.asientos:
+                if asiento is not None:
+                    numAsientos += 1
+            return numAsientos
+        
+        def verificarIntegridad(self):
+            if self.registro == self.motor.registro:
+                for asiento in self.asientos:
+                    if asiento is not None:
+                        if asiento.registro != self.registro:
+                            return "Las piezas no son originales"
+                return "Auto original"
+            else:
+                return "Las piezas no son originales"
 
 class Asiento:
     def __init__(self, color:str, precio:int, registro:int):
