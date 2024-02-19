@@ -28,14 +28,14 @@ class Auto:
         self.motor = motor
         self.registro = registro
 
-        def cantidadAsientos(self):
+    def cantidadAsientos(self):
             numAsientos = 0
             for asiento in self.asientos:
                 if asiento is not None:
                     numAsientos += 1
             return numAsientos
         
-        def verificarIntegridad(self):
+    def verificarIntegridad(self):
             if self.registro == self.motor.registro:
                 for asiento in self.asientos:
                     if asiento is not None:
